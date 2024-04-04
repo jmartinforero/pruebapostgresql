@@ -28,7 +28,9 @@ import SearchIcon from '@material-ui/icons/Search';
 
 // Import icon from Material UI
 import ExtensionIcon from '@material-ui/icons/Extension';
-import AtomIcon from './iconoAtom.icon.svg';
+
+//Mi propio icono --> Preguntar donde tengo que guardar el .svg
+//import AtomIcon from './iconoAtom.icon.svg';
 
 const useSidebarLogoStyles = makeStyles({
   root: {

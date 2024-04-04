@@ -1,5 +1,4 @@
 import {
-    UnifiedThemeProvider,
     createUnifiedTheme,
     palettes
   } from '@backstage/theme';
