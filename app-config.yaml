@@ -48,6 +48,10 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 proxy:
+  '/circleci/api':
+  target: https://circleci.com/api/v5.0
+  headers:
+    Circle-Token: $CircleCIAuthToken
   ### Example for how to add a proxy endpoint for the frontend.
   ### A typical reason to do this is to handle HTTPS and CORS for internal services.
   # endpoints:
