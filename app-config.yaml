@@ -67,13 +67,10 @@ techdocs:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
 auth:
-  enviroment: development
+  # see https://backstage.io/docs/auth/ to learn about auth providers
   providers:
-    github:
-      development: 
-        clientId: $clientId
-        clientSecret: $clientSecret
-        callbackUrl: 'http://localhost:7007/api/auth/github/handler/frame'
+    # See https://backstage.io/docs/auth/guest/provider
+    guest: {}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
