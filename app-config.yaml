@@ -71,8 +71,8 @@ auth:
   providers:
     github:
       development: 
-        clientId: 4e27fdc1dead5ed0ed67
-        clientSecret: 7a625f8e131952d1d8a1b5469ae3b89dbf25e7ef
+        clientId: $clientId
+        clientSecret: $clientSecret
         callbackUrl: 'http://localhost:7007/api/auth/github/handler/frame'
 
 scaffolder:
