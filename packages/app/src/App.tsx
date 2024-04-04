@@ -41,7 +41,9 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { createApp } from '@backstage/app-defaults';
 import LightIcon from '@material-ui/icons/WbSunny';
 import { UnifiedThemeProvider, themes } from '@backstage/theme';
+
 import { multicolorTheme } from './theme/multicolorTheme';
+import { myTheme } from './theme/myTheme';
 
 const app = createApp({
   apis,
@@ -85,7 +87,14 @@ const app = createApp({
     variant: 'light',
     icon: <LightIcon />,
     Provider: ({ children }) => <UnifiedThemeProvider theme={multicolorTheme} children={children} />,
-    }
+    },
+    {
+      id: 'myTheme',
+      title: 'My Theme',
+      variant: 'light',
+      icon: <LightIcon />,
+      Provider: ({ children }) => <UnifiedThemeProvider theme={myTheme} children={children} />,
+      }
   ]
 });
 
