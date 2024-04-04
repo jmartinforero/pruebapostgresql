@@ -67,13 +67,28 @@ const app = createApp({
   components: {
     SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
-  themes: [{
+  themes: [
+    // Keeping the original themes is completely optional
+    {
+      id: 'default-dark',
+      title: 'Default Dark',
+      variant: 'dark',
+      Provider: ({ children }) => <UnifiedThemeProvider theme={themes.dark} children={children} />,
+    },
+    {
+      id: 'default-light',
+      title: 'Default Light',
+      variant: 'light',
+      Provider: ({ children }) => <UnifiedThemeProvider theme={themes.light} children={children} />,
+    },
+    {
     id: 'multicolor-theme',
     title: 'Multicolor Theme',
     variant: 'light',
     icon: <LightIcon />,
     Provider: ({ children }) => <UnifiedThemeProvider theme={multicolorTheme} children={children} />,
-    }]
+    }
+  ]
 });
 
 const routes = (
