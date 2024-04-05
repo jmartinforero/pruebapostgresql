@@ -44,6 +44,7 @@ import { UnifiedThemeProvider, themes } from '@backstage/theme';
 
 import { multicolorTheme } from './theme/multicolorTheme';
 import { myTheme } from './theme/myTheme';
+import { githubAuthApiRef } from '@backstage/core-plugin-api';
 
 const app = createApp({
   apis,
@@ -65,7 +66,20 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => (
+      <SignInPage
+        {...props}
+        auto
+        providers={[
+          'guest',
+          {
+          id: 'github-auth-provider',
+          title: 'GitHub',
+          message: 'Sign in using GitHub',
+          apiRef: githubAuthApiRef,},
+        ]}
+      />
+    ),
   },
   themes: [
     // Keeping the original themes is completely optional
